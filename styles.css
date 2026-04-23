@@ -1,0 +1,112 @@
+:root {
+  --bg: #f3f6fc;
+  --card: #fff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --border: #dbe4ff;
+  --success: #0f766e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.hero {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  color: #fff;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.hero h1 { margin: 0 0 6px 0; font-size: 20px; }
+.hero p { margin: 0; opacity: .95; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn {
+  border: 1px solid #bfd0ff;
+  background: #edf2ff;
+  color: #1e3a8a;
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:hover { background: #dbe6ff; }
+
+.btn.primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: var(--primary-dark);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+th, td {
+  border-bottom: 1px solid #eef2ff;
+  padding: 8px 4px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.status-pill {
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-weight: 600;
+  font-size: 11px;
+  background: #eef2ff;
+  color: #3730a3;
+}
+
+.status-relance { background: #fef3c7; color: #92400e; }
+.status-fait { background: #dcfce7; color: #166534; }
+.status-attente { background: #e0f2fe; color: #075985; }
+.status-cloture { background: #f3f4f6; color: #374151; }
+
+.note {
+  color: var(--success);
+  font-weight: 600;
+}

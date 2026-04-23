@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relance IA Outlook</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <h1>Agent IA de relance</h1>
+      <p>Relance manuelle en 1 clic + auto-relance assistée compatible Outlook.</p>
+    </header>
+
+    <section class="card">
+      <h2>Importer des clients (.xlsx)</h2>
+      <input id="excelInput" type="file" accept=".xlsx" />
+      <p class="hint">Colonnes recommandées : nom, email, sujet, dernierContact, nbRelances, statut.</p>
+    </section>
+
+    <section class="card actions">
+      <h2>Actions principales</h2>
+      <div class="btn-row">
+        <button id="manualRelanceBtn" class="btn primary">Relancer le client sélectionné</button>
+        <button id="autoRelanceBtn" class="btn">Relance automatique (assistée)</button>
+        <button id="launchQueueBtn" class="btn">Lancer auto-relance</button>
+      </div>
+      <p id="statusLine" class="hint"></p>
+    </section>
+
+    <section class="card">
+      <h2>Pipeline clients</h2>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Client</th>
+            <th>Email</th>
+            <th>Dernier contact</th>
+            <th>Relances</th>
+            <th>Statut</th>
+            <th>Prochaine action IA</th>
+          </tr>
+        </thead>
+        <tbody id="clientsTbody"></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Contrainte Outlook respectée</h2>
+      <ul>
+        <li><strong>Mode 1 :</strong> Pré-remplissage + ouverture du mail Outlook natif.</li>
+        <li><strong>Mode 2 :</strong> Auto-relance assistée : file de messages à valider rapidement.</li>
+        <li><strong>Mode 3 (bonus) :</strong> envoi 100% automatique possible uniquement via backend + Microsoft Graph API.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="taskpane.js"></script>
+</body>
+</html>
